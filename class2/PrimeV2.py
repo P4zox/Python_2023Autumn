@@ -10,3 +10,6 @@ def is_prime(n):
         return False
 n=int(input("pls type a num: "))
 print(is_prime(n))     
+
+
+# the bigO is O(n)

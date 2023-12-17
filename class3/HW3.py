@@ -5,3 +5,4 @@ for row in range(3):
     for col in range(3):
         print(a[col][row], end='\t')
     print("")
+# the bigO is O(n*n)

@@ -30,6 +30,10 @@ config = {
 "appId": "1:721958247771:web:c543aecd1676dd53be4e7e",
 "databaseURL":""
 }
+firebase = pyrebase.initialize_app(config)
+# Get a reference to the auth service
+auth = firebase.auth()
+
 root=Tk()
 root.geometry('975x675')
 root.title("HGS Store Info")
@@ -377,19 +381,19 @@ def addUser(view, account_entry, password_entry):
         result_label["text"]="Create User failled!"
         
 # login
-root=Tk()
+root2=Tk()
 
 # Create Labels(texts)
-login_label=Label(root, text="login page")
-account_label=Label(root, text="Account")
-password_label=Label(root, text="Password")
-result_label=Label(root, text="")
+login_label=Label(root2, text="login page")
+account_label=Label(root2, text="Account")
+password_label=Label(root2, text="Password")
+result_label=Label(root2, text="")
 
 # Create Entrys and Buttons
-account_entry=Entry(root)
-password_entry=Entry(root, show="*") #To make the password into *
-signup_button=Button(root, text="signup", width=10, command=lambda: addUser(root, account_entry, password_entry))
-login_button=Button(root, text="login", width=10, command=lambda: verifyUser(root, account_entry, password_entry))
+account_entry=Entry(root2)
+password_entry=Entry(root2, show="*") #To make the password into *
+signup_button=Button(root2, text="signup", width=10, command=lambda: addUser(root, account_entry, password_entry))
+login_button=Button(root2, text="login", width=10, command=lambda: verifyUser(root, account_entry, password_entry))
 
 
 # Put those elements inside the window
